@@ -51,7 +51,7 @@ export const NavBar = () => {
         leaveFrom="opacity-100 scale-100"
         leaveTo="opacity-0 scale-95"
       >
-        <Popover.Panel focus className="absolute z-10 top-0 inset-x-0 p-2  md:hidden shadow-xl dark:bg-gray-800 ">
+        <Popover.Panel focus className="absolute z-10 top-0 inset-x-0 p-2 bg-gray-800 ">
           <div className="px-5 pt-4 flex items-center justify-end">
             <Popover.Button className=" rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-800 focus:none ">
               <span className="sr-only">Close main menu</span>
@@ -60,21 +60,18 @@ export const NavBar = () => {
           </div>
           <div className="px-2 pt-2 pb-3 space-y-1">
             {navigation.map((item) => (
-              <a
-                key={item.name}
-                href={item.href}
-                className=" block px-3 py-2 font-medium text-gray-500 hover:text-gray-700"
-              >
-                {item.name}
-              </a>
+              <Link key={item.name} href={item.href}>
+                <div className=" block px-3 py-2 font-medium text-gray-500 hover:text-gray-700 cursor-pointer">
+                  {item.name}
+                </div>
+              </Link>
             ))}
           </div>
-          <a
-            href="#"
-            className="block w-full px-5 py-3 text-center font-medium text-indigo-600 hover:text-indigo-800 shadow-lg"
-          >
-            Log in
-          </a>
+          <Link href="/auth/login">
+            <div className="block w-full px-5 py-3 text-center font-medium text-indigo-600 hover:text-indigo-800 shadow-lg cursor-pointer">
+              Login
+            </div>
+          </Link>
         </Popover.Panel>
       </Transition>
     </Popover>

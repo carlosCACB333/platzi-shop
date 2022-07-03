@@ -44,7 +44,7 @@ export const SideBar = () => {
     <>
       {open && (
         <aside
-          className="w-64 h-screen overflow-y-auto py-4 px-3  rounded bg-gray-800 fixed md:static z-10"
+          className="w-64 h-screen overflow-y-auto py-4 px-3  rounded bg-gray-800 fixed md:static z-50"
           aria-label="Sidebar"
         >
           <Link href="/">
